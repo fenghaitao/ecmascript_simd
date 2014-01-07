@@ -11,14 +11,32 @@ if (typeof Int32x4Array === "undefined") {
 }
 */
 
+var ArrayType = TypedObject.ArrayType;
+
+var Float32x4Array = SIMD.float32x4.array();
+Float32x4Array.prototype.setAt = function(index, value) {
+  this[index] = value;
+}
+Float32x4Array.prototype.getAt = function(index) {
+  return this[index];
+}
+
+var Int32x4Array = SIMD.int32x4.array();
+Int32x4Array.prototype.setAt = function(index, value) {
+  this[index] = value;
+}
+Int32x4Array.prototype.getAt = function(index) {
+  return this[index];
+}
+
 load ('base.js');
 
 // load individual benchmarks
 load ('kernel-template.js');
 load ('average.js');
 load ('mandelbrot.js');
-//load ('matrix-multiplication.js');
-//load ('transform.js');
+load ('matrix-multiplication.js');
+load ('transform.js');
 //load ('shiftrows.js');
 //load ('aobench.js');
 //load ('transpose4x4.js');
