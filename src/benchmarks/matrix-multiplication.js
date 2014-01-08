@@ -132,42 +132,42 @@
 
   function simdMultiply(n) {
     for (var i = 0; i < n; i++) {
-      var a0 = T1x4.getAt(0);
-      var a1 = T1x4.getAt(1);
-      var a2 = T1x4.getAt(2);
-      var a3 = T1x4.getAt(3);
-      var b0 = T2x4.getAt(0);
-      Outx4.setAt(0, SIMD.float32x4.add(
+      var a0 = T1x4[0];
+      var a1 = T1x4[1];
+      var a2 = T1x4[2];
+      var a3 = T1x4[3];
+      var b0 = T2x4[0];
+      Outx4[0] = SIMD.float32x4.add(
                       SIMD.float32x4.mul(SIMD.float32x4.shuffle(b0, SIMD.XXXX), a0),
                     SIMD.float32x4.add(
                       SIMD.float32x4.mul(SIMD.float32x4.shuffle(b0, SIMD.YYYY), a1),
                     SIMD.float32x4.add(
                       SIMD.float32x4.mul(SIMD.float32x4.shuffle(b0, SIMD.ZZZZ), a2),
-                      SIMD.float32x4.mul(SIMD.float32x4.shuffle(b0, SIMD.WWWW), a3)))))
-      var b1 = T2x4.getAt(1);
-      Outx4.setAt(1, SIMD.float32x4.add(
+                      SIMD.float32x4.mul(SIMD.float32x4.shuffle(b0, SIMD.WWWW), a3))));
+      var b1 = T2x4[1];
+      Outx4[1] = SIMD.float32x4.add(
                       SIMD.float32x4.mul(SIMD.float32x4.shuffle(b1, SIMD.XXXX), a0),
                     SIMD.float32x4.add(
                       SIMD.float32x4.mul(SIMD.float32x4.shuffle(b1, SIMD.YYYY), a1),
                     SIMD.float32x4.add(
                       SIMD.float32x4.mul(SIMD.float32x4.shuffle(b1, SIMD.ZZZZ), a2),
-                      SIMD.float32x4.mul(SIMD.float32x4.shuffle(b1, SIMD.WWWW), a3)))))
-      var b2 = T2x4.getAt(2);
-      Outx4.setAt(2, SIMD.float32x4.add(
+                      SIMD.float32x4.mul(SIMD.float32x4.shuffle(b1, SIMD.WWWW), a3))));
+      var b2 = T2x4[2];
+      Outx4[2] = SIMD.float32x4.add(
                       SIMD.float32x4.mul(SIMD.float32x4.shuffle(b2, SIMD.XXXX), a0),
                     SIMD.float32x4.add(
                       SIMD.float32x4.mul(SIMD.float32x4.shuffle(b2, SIMD.YYYY), a1),
                     SIMD.float32x4.add(
                       SIMD.float32x4.mul(SIMD.float32x4.shuffle(b2, SIMD.ZZZZ), a2),
-                      SIMD.float32x4.mul(SIMD.float32x4.shuffle(b2, SIMD.WWWW), a3)))))
-      var b3 = T2x4.getAt(3);
-      Outx4.setAt(3, SIMD.float32x4.add(
+                      SIMD.float32x4.mul(SIMD.float32x4.shuffle(b2, SIMD.WWWW), a3))));
+      var b3 = T2x4[3];
+      Outx4[3] = SIMD.float32x4.add(
                       SIMD.float32x4.mul(SIMD.float32x4.shuffle(b3, SIMD.XXXX), a0),
                     SIMD.float32x4.add(
                       SIMD.float32x4.mul(SIMD.float32x4.shuffle(b3, SIMD.YYYY), a1),
                     SIMD.float32x4.add(
                       SIMD.float32x4.mul(SIMD.float32x4.shuffle(b3, SIMD.ZZZZ), a2),
-                      SIMD.float32x4.mul(SIMD.float32x4.shuffle(b3, SIMD.WWWW), a3)))))
+                      SIMD.float32x4.mul(SIMD.float32x4.shuffle(b3, SIMD.WWWW), a3))));
     }
   }
 
